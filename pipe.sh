@@ -67,6 +67,7 @@ done
 
 ls -d pileups/s_* | xargs -n 1 bsub -o LSF/ -J ${TAG}_SNP -We 59 Rscript --no-save $SDIR/computeSNPTable.R
 bSync ${TAG}_SNP
+sleep 15
 ls sporeTbl____* | xargs -n 1 bsub -o LSF/ -J ${TAG}__SPORE -We 59 python $SDIR/Spore_simplify2a.py
 
 
